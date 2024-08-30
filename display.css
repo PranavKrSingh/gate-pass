@@ -1,0 +1,126 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Neutral background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 210mm; /* A4 width in mm */
+    margin: 20mm auto;
+    padding: 20mm;
+    background: #fce4ec; /* Light pink background for container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20mm;
+}
+
+header .logo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #d81b60; /* Pink color for text */
+}
+
+.gate-pass {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20mm; /* Add space below gate pass details */
+}
+
+.photo-section {
+    width: 40%;
+    text-align: center;
+}
+
+.photo-section img {
+    width: 35mm; /* Passport size width */
+    height: 45mm; /* Passport size height */
+    border: 2px solid #d81b60; /* Pink border */
+    border-radius: 5px;
+}
+
+.details-section {
+    width: 55%;
+}
+
+.details-section h2 {
+    margin-top: 0;
+    color: #d81b60; /* Pink color for headers */
+}
+
+.details-section p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: black; /* Black color for text */
+}
+
+strong {
+    font-weight: bold;
+    color: #d81b60; /* Pink color for labels */
+}
+
+.qr-section {
+    text-align: center; /* Center QR code section */
+    margin-top: 20mm; /* Space above QR code section */
+}
+
+.qr-section p {
+    font-size: 16px;
+    color: black; /* Black color for text */
+}
+
+#qrCodeContainer {
+    margin-top: 10mm; /* Space above QR code */
+}
+
+#printButton {
+    display: block;
+    margin: 20mm auto 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d81b60; /* Pink button background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#printButton:hover {
+    background-color: #c2185b; /* Darker pink on hover */
+}
+
+/* Print styles for the specific section */
+@media print {
+    body * {
+        visibility: hidden; /* Hide all content */
+    }
+
+    .container, .container * {
+        visibility: visible; /* Show only the container */
+    }
+
+    .container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fce4ec; /* Ensure pink background */
+        box-shadow: none; /* Remove shadow for print */
+        border: none; /* Remove border for print */
+    }
+
+    #printButton {
+        display: none; /* Hide print button in print view */
+    }
+}
